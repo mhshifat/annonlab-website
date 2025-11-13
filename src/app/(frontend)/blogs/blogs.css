@@ -1,0 +1,301 @@
+.hero {
+    background-image: url('../../../assets/images/blogs-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding: 6.8rem 0;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        background-image: url('../../../assets/images/blogs-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        padding: 13.6rem 0;
+    }
+}
+
+.hero > .container > h5 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 3.5rem;
+    letter-spacing: 0%;
+    color: var(--foreground);
+}
+
+.hero > .container > h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
+    letter-spacing: 0%;
+    color: var(--foreground);
+    margin-top: .8rem;
+}
+
+.hero > .container > div {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    color: var(--muted);
+    margin-top: 2.4rem;
+}
+
+.BlogList {
+    padding-top: 4.8rem;
+}
+
+.BlogList > .container > .BlogList__Categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 5.6rem;
+}
+
+.BlogList > .container > .BlogList__Categories > li {
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    letter-spacing: 0%;
+    color: var(--muted);
+}
+
+.BlogList > .container > .BlogList__Categories > li.active {
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.BlogList > .container > .BlogList__Grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);;
+    grid-gap: 2.4rem;
+}
+
+@media (min-width: 1024px) {
+    .BlogList > .container > .BlogList__Grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.BlogList > .container > .BlogList__Footer {
+    margin-top: 6.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BlogList > .container > .BlogList__Footer > .BlogList__LoadMore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    border: 1px solid var(--muted);
+    padding: 1.4rem 2.8rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0%;
+    color: var(--foreground);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--secondary);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--secondary);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .thumbnail {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .thumbnail > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content {
+    padding: 1.6rem;
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > div {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > div > span:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1.6rem;
+    background: var(--primary-200);
+    border: 1px solid var(--primary-200);
+    border-radius: 3rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > div > span:last-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.0rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > h3 {
+    margin-top: 1.6rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > div {
+    margin-top: 1.6rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > a {
+    display: flex;
+    align-items: center;
+    margin-top: 2.4rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 800;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.newsletter {
+    margin: 6rem 0;
+    background: var(--secondary-background);
+}
+
+@media (min-width: 1024px) {
+    .newsletter {
+        margin: 12rem 0;
+        background: var(--secondary-background);
+    }
+}
+
+.newsletter > .container {
+    padding: 5rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .newsletter > .container {
+        padding: 10rem 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.newsletter > .container > h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 5.6rem;
+    line-height: 7.2rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.newsletter > .container > div {
+    margin-top: 2.4rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--muted);
+    text-align: center;
+}
+
+.newsletter > .container > form {
+    margin-top: 8rem;
+    width: 100%;
+    max-width: 80%;
+    border-bottom: 1px solid var(--foreground);
+    display: flex;
+    align-items: center;
+    height: 6.8rem;
+    padding: 0 1.6rem;
+}
+
+.newsletter > .container > form > input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.newsletter > .container > form > input::placeholder {
+    color: var(--foreground);
+    opacity: 0.3;
+}
+
+.newsletter > .container > form > button {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

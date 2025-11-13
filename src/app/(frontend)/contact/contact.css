@@ -1,0 +1,223 @@
+.hero {
+    background-image: url('../../../assets/images/contact-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding: 6.8rem 0;
+    background: #D4D5CF;
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        background-image: url('../../../assets/images/contact-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        padding: 13.6rem 0;
+    }
+}
+
+.hero > .container > h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
+    letter-spacing: 0%;
+    color: var(--foreground);
+}
+
+.ContactForm {
+    margin: 6rem 0;
+    background: var(--secondary-background);
+}
+
+@media (min-width: 1024px) {
+    .ContactForm {
+        margin: 12rem 0;
+        background: var(--secondary-background);
+    }
+}
+
+.ContactForm > .container {
+    padding: 5rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .ContactForm > .container {
+        padding: 10rem 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.ContactForm > .container > h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 5.6rem;
+    line-height: 7.2rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+    text-align: center;
+}
+
+.ContactForm > .container > div {
+    margin-top: 2.4rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--muted);
+    text-align: center;
+}
+
+.ContactForm > .container > form {
+    margin-top: 8rem;
+    width: 100%;
+    max-width: 80%;
+}
+
+.ContactForm > .container > form > textarea,
+.ContactForm > .container > form > input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+    border-bottom: 1px solid var(--foreground);
+    width: 50%;
+    padding: 1.6rem;
+}
+
+.ContactForm > .container > form > textarea::placeholder,
+.ContactForm > .container > form > input::placeholder {
+    color: var(--foreground);
+    opacity: 0.3;
+}
+
+.ContactForm > .container > form > button {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--primary);
+    padding: 1.4rem 2.8rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+.newsletter {
+    margin: 6rem 0;
+    background: var(--secondary-background);
+}
+
+@media (min-width: 1024px) {
+    .newsletter {
+        margin: 12rem 0;
+        background: var(--secondary-background);
+    }
+}
+
+.newsletter > .container {
+    padding: 5rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .newsletter > .container {
+        padding: 10rem 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.newsletter > .container > h3 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 5.6rem;
+    line-height: 7.2rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.newsletter > .container > div {
+    margin-top: 2.4rem;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--muted);
+    text-align: center;
+}
+
+.newsletter > .container > form {
+    margin-top: 8rem;
+    width: 100%;
+    max-width: 80%;
+    border-bottom: 1px solid var(--foreground);
+    display: flex;
+    align-items: center;
+    height: 6.8rem;
+    padding: 0 1.6rem;
+}
+
+.newsletter > .container > form > input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.newsletter > .container > form > input::placeholder {
+    color: var(--foreground);
+    opacity: 0.3;
+}
+
+.newsletter > .container > form > button {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
