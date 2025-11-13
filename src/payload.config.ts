@@ -2,6 +2,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo';
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing';
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -637,5 +638,14 @@ export default buildConfig({
       collections: ["blogs"],
       tabbedUI: true
     }),
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN || '',
+        acl: 'public-read',
+      }
+    })
   ],
 })
