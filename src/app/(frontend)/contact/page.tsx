@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import './contact.css';
 import ContactHero from "@/components/modules/contact/hero";
 import { getPayload } from 'payload';

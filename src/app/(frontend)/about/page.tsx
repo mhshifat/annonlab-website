@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import AboutHero from '@/components/modules/about/hero';
 import './about.css';
 import AboutSubHero from '@/components/modules/about/sub-hero';

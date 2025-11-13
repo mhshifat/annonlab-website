@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import BlogsHero from '@/components/modules/blogs/hero';
 import './blogs.css';
 import BlogList from '@/components/modules/blogs/blog-list';

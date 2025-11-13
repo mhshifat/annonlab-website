@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import './blog.css';
 import { getPayload } from 'payload';
 import config from '@payload-config';

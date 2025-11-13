@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Culture from '@/components/modules/home/culture';
 import './home.css';
 import Hero from "@/components/modules/home/hero";
