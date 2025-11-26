@@ -106,7 +106,7 @@ export default async function AboutPage() {
                     title: blog.title ? <RichText data={blog.title} /> : "Blog Title",
                     excerpt: blog.excerpt ? <RichText data={blog.excerpt} /> : "Blog excerpt goes here...",
                     image: (blog.image as Media)?.url || BlogPreview.src,
-                    link: `/blogs/${blog.id}`,
+                    link: `/blogs/${blog.slug}`,
                     category: blog.category || "General",
                     readTime: blog.readTime || "5 min read",
                 }))}

@@ -1,4 +1,5 @@
-import type { CollectionConfig } from 'payload'
+import type { CollectionConfig } from 'payload';
+import { slugify } from 'transliteration';
 
 export const Blog: CollectionConfig = {
   slug: 'blogs',
@@ -7,9 +8,22 @@ export const Blog: CollectionConfig = {
   },
   fields: [
     {
+      name: 'titleForSlug',
+      label: 'Title For Slug',
+      type: 'text',
+    },
+    {
       label: "Category",
       name: "category",
       type: "text"
+    },
+    {
+      name: 'slug',
+      label: 'Slug',
+      type: 'text',
+      admin: {
+        readOnly: true,
+      },
     },
     {
       label: "Read Time",
@@ -43,4 +57,14 @@ export const Blog: CollectionConfig = {
       type: "text",
     },
   ],
+  hooks: {
+    beforeChange: [
+      async ({ data }) => {
+        if (data.titleForSlug) {
+          data.slug = slugify(data.titleForSlug, { lowercase: true });
+        }
+        return data;
+      }
+    ]
+  }
 }

@@ -10,24 +10,34 @@ import { Media } from '@/payload-types';
 import BlogPreview from '../../../../assets/images/blog-1.png';
 import generateMeta from '@/lib/generate-metadata';
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-    const id = (await params).id;
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+    const slug = (await params).slug;
     const payload = await getPayload({ config });
-    const result = await payload.findByID({
+    const result = await payload.find({
         collection: 'blogs',
-        id: id,
+        where: {
+            slug: {
+                equals: slug,
+            },
+        },
+        limit: 1,
     });
 
-    return generateMeta({ doc: result });
+    return generateMeta({ doc: result.docs[0] });
 }
 
-export default async function Blog({ params }: { params: { id: string } }) {
-    const id = (await params).id;
+export default async function Blog({ params }: { params: { slug: string } }) {
+    const slug = (await params).slug;
     const payload = await getPayload({ config });
-    const [result, blogSlides, blogs] = await Promise.all([
-        payload.findByID({
+    const [blogsWithSlug, blogSlides, blogs] = await Promise.all([
+        payload.find({
             collection: 'blogs',
-            id: id,
+            where: {
+                slug: {
+                    equals: slug,
+                },
+            },
+            limit: 1,
         }),
         payload.findGlobal({
             slug: "blogSlides"
@@ -38,6 +48,8 @@ export default async function Blog({ params }: { params: { id: string } }) {
             sort: '-createdAt',   // optional, newest first
         })
     ]);
+
+    const result = blogsWithSlug.docs[0];
 
     return (
         <div className="BlogDetails">
@@ -88,7 +100,7 @@ export default async function Blog({ params }: { params: { id: string } }) {
                         title: blog.title ? <RichText data={blog.title} /> : "Blog Title",
                         excerpt: blog.excerpt ? <RichText data={blog.excerpt} /> : "Blog excerpt goes here...",
                         image: (blog.image as Media)?.url || BlogPreview.src,
-                        link: `/blogs/${blog.id}`,
+                        link: `/blogs/${blog.slug}`,
                         category: blog.category || "General",
                         readTime: blog.readTime || "5 min read",
                     }))}

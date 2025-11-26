@@ -193,7 +193,9 @@ export interface Media {
  */
 export interface Blog {
   id: string;
+  titleForSlug?: string | null;
   category?: string | null;
+  slug?: string | null;
   readTime?: string | null;
   title?: {
     root: {
@@ -403,7 +405,9 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "blogs_select".
  */
 export interface BlogsSelect<T extends boolean = true> {
+  titleForSlug?: T;
   category?: T;
+  slug?: T;
   readTime?: T;
   title?: T;
   excerpt?: T;

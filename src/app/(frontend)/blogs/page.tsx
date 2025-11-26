@@ -81,7 +81,7 @@ export default async function Blogs({ searchParams }: { searchParams: { category
                     id: blog.id,
                     image: (blog.image as Media)?.url || '',
                     readTime: blog?.readTime || "Unknown",
-                    link: `/blogs/${blog.id}`,
+                    link: `/blogs/${blog.slug}`,
                 })) || []}
             />
             <Newsletter
