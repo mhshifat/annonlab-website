@@ -48,7 +48,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <Providers>
           <Header
             logo={header.logo ? (
-              <img src={(header.logo as Media).url!} alt="Logo" />
+              <img width={(header.logo as Media).width || 50} height={(header.logo as Media).height || 50} src={(header.logo as Media).url!} alt="Logo" />
             ) : <h3>LOGO</h3>}
             navLinks={[
               { label: "Home", href: "/" },
