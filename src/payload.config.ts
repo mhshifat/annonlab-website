@@ -623,7 +623,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Blog, Newsletter, Contact],
-  editor: lexicalEditor(),
+  editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

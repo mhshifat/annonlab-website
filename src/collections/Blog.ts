@@ -1,3 +1,4 @@
+import { lexicalEditor, LinkFeature } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig } from 'payload';
 import { slugify } from 'transliteration';
 
@@ -43,7 +44,30 @@ export const Blog: CollectionConfig = {
     {
       label: "Content",
       name: "content",
-      type: "richText"
+      type: "richText",
+      editor: lexicalEditor({
+        features: ({ defaultFeatures, rootFeatures }) => [
+          ...defaultFeatures,
+          LinkFeature({
+            // Example showing how to customize the built-in fields
+            // of the Link feature
+            fields: ({ defaultFields }) => [
+              ...defaultFields,
+              {
+                name: 'rel',
+                label: 'Rel Attribute',
+                type: 'select',
+                hasMany: true,
+                options: ['noopener', 'noreferrer', 'nofollow'],
+                admin: {
+                  description:
+                    'The rel attribute defines the relationship between a linked resource and the current document. This is a custom link field.',
+                },
+              },
+            ],
+          }),
+        ],
+      })
     },
     {
       label: "Image",

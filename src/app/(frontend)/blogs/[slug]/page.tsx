@@ -86,7 +86,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
                     <span>{result?.createdAt ? formatDate(new Date(result.createdAt), "PP") : '24 Jun 2025'}</span>
                 </div>
 
-                <div className='BlogDetails__Content'>
+                <div className='prose! prose-2xl! max-w-none!'>
                     {result?.content ? <RichText data={result.content} /> : 'Blog Content'}
                 </div>
 
