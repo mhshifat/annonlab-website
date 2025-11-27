@@ -25,7 +25,7 @@ export default function BlogSlides({ title, subtitle, ctaText, ctaLink, data }: 
     useEffect(() => {
         let swiperInstance: any;
         const timeout = setTimeout(() => {
-            if (typeof window !== "undefined" && window.Swiper) {
+            if (typeof window !== "undefined" && window.Swiper && data.length > 3) {
                 new Swiper('.blogs .swiper', {
                     // Optional parameters
                     // loop: true,
@@ -91,7 +91,7 @@ export default function BlogSlides({ title, subtitle, ctaText, ctaLink, data }: 
                 </div>
 
                 <div className="swiper">
-                    <div className="swiper-wrapper">
+                    <div className={`swiper-wrapper ${data.length < 3 ? 'grid! grid-cols-3! gap-6!' : ''}`}>
                         {data.map(item => (
                             <div key={item.id} className="swiper-slide">
                                 <div className="blog">
