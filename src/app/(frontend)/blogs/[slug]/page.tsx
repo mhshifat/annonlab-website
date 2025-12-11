@@ -9,6 +9,7 @@ import BlogSlides from '@/components/shared/blogs';
 import { Media } from '@/payload-types';
 import BlogPreview from '../../../../assets/images/blog-1.png';
 import generateMeta from '@/lib/generate-metadata';
+import { RichTextWrapper } from '@/components/shared/rich-text';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
     const slug = (await params).slug;
@@ -86,26 +87,25 @@ export default async function Blog({ params }: { params: { slug: string } }) {
                     <span>{result?.createdAt ? formatDate(new Date(result.createdAt), "PP") : '24 Jun 2025'}</span>
                 </div>
 
-                <div className='prose! prose-2xl! max-w-none!'>
-                    {result?.content ? <RichText data={result.content} /> : 'Blog Content'}
+                <div className='BlogDetails__Content'>
+                    {result?.content ? <RichTextWrapper data={result.content} /> : 'Blog Content'}
                 </div>
-
-                {blogs.docs?.length && <BlogSlides
-                    title={blogSlides?.title ? <RichText data={blogSlides.title} /> : "From Our Blog"}
-                    subtitle={blogSlides?.subtitle ? <RichText data={blogSlides.subtitle} /> : "Insights, stories, and tips"}
-                    ctaText={blogSlides?.ctaText || "View all"}
-                    ctaLink={blogSlides?.ctaLink || "/blogs"}
-                    data={blogs.docs.map((blog) => ({
-                        id: blog.id,
-                        title: blog.title ? <RichText data={blog.title} /> : "Blog Title",
-                        excerpt: blog.excerpt ? <RichText data={blog.excerpt} /> : "Blog excerpt goes here...",
-                        image: (blog.image as Media)?.url || BlogPreview.src,
-                        link: `/blogs/${blog.slug}`,
-                        category: blog.category || "General",
-                        readTime: blog.readTime || "5 min read",
-                    }))}
-                />}
             </div>
+            {blogs.docs?.length && <BlogSlides
+                title={blogSlides?.title ? <RichText data={blogSlides.title} /> : "From Our Blog"}
+                subtitle={blogSlides?.subtitle ? <RichText data={blogSlides.subtitle} /> : "Insights, stories, and tips"}
+                ctaText={blogSlides?.ctaText || "View all"}
+                ctaLink={blogSlides?.ctaLink || "/blogs"}
+                data={blogs.docs.map((blog) => ({
+                    id: blog.id,
+                    title: blog.title ? <RichText data={blog.title} /> : "Blog Title",
+                    excerpt: blog.excerpt ? <RichText data={blog.excerpt} /> : "Blog excerpt goes here...",
+                    image: (blog.image as Media)?.url || BlogPreview.src,
+                    link: `/blogs/${blog.slug}`,
+                    category: blog.category || "General",
+                    readTime: blog.readTime || "5 min read",
+                }))}
+            />}
         </div>
     );
 }

@@ -4,6 +4,7 @@ import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical
 import type { JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
 import { LinkJSXConverter, RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react'
 import React from 'react'
+import './rich-text.css'
 
 const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
     const { relationTo, value } = linkNode.fields.doc!
@@ -15,6 +16,8 @@ const internalDocToHref = ({ linkNode }: { linkNode: SerializedLinkNode }) => {
     switch (relationTo) {
         case 'articles':
             return `/blog/${slug}`
+        case 'blogs':
+            return `/blogs/${slug}`
         default:
             return `/${relationTo}/${slug}`
     }
@@ -25,8 +28,17 @@ const jsxConverters: JSXConvertersFunction<DefaultNodeTypes> = ({ defaultConvert
     ...LinkJSXConverter({ internalDocToHref }),
 })
 
-export const RichText: React.FC<{
-    lexicalData: SerializedEditorState
-}> = ({ lexicalData }) => {
-    return <PayloadRichText converters={jsxConverters} data={lexicalData} />
+export const RichTextWrapper: React.FC<{
+    data?: SerializedEditorState
+    lexicalData?: SerializedEditorState
+    className?: string
+}> = ({ data, lexicalData, className = '' }) => {
+    const content = data || lexicalData
+    if (!content) return null
+
+    return (
+        <div className={`rich-text-content ${className}`.trim()}>
+            <PayloadRichText converters={jsxConverters} data={content} />
+        </div>
+    )
 }
