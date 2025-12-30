@@ -42,7 +42,7 @@ export default function Newsletter({ title, subtitle }: NewsletterProps) {
                 <div>{subtitle}</div>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Tell us your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <button type="submit">
+                    <button type="submit" aria-label="Subscribe to newsletter">
                         {loading ? (
                             <Loader2Icon className="animate-spin" />
                         ) : (

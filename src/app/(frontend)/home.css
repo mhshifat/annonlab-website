@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 2.0rem;
@@ -36,7 +36,7 @@
 
 .hero > .container > h3 {
     margin-top: .8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 7.2rem;
     line-height: 9.2rem;
@@ -48,7 +48,7 @@
 
 .hero > .container > div {
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -74,7 +74,7 @@
     justify-content: center;
     align-items: center;
     gap: .4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -92,7 +92,7 @@
     justify-content: center;
     align-items: center;
     gap: .4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -159,7 +159,7 @@
 }
 
 .culture > .container > h5 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 3.5rem;
@@ -170,7 +170,7 @@
 
 .culture > .container > h3 {
     margin-top: .8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 5.6rem;
     line-height: 7.2rem;
@@ -181,7 +181,7 @@
 
 .culture > .container > div {
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -225,7 +225,7 @@
 
 .stats > .container > div > span:first-of-type {
     color: var(--primary);
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 700;
     font-size: 5.6rem;
     line-height: 7.2rem;
@@ -235,7 +235,7 @@
 
 .stats > .container > div > span:last-of-type {
     color: var(--background);
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -301,7 +301,7 @@
 }
 
 .what-we-serve > .container > .info > h4 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 3.5rem;
@@ -312,7 +312,7 @@
 
 .what-we-serve > .container > .info > h3 {
     margin-top: .8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 4.0rem;
     line-height: 5.2rem;
@@ -323,7 +323,7 @@
 
 .what-we-serve > .container > .info > div {
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -341,7 +341,7 @@
     justify-content: center;
     align-items: center;
     gap: .4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -369,7 +369,7 @@
 }
 
 .what-we-serve > .container > .steps > ul > li {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -388,8 +388,8 @@
     margin-top: 6.4rem;
 }
 
-.testimonials > .container > h5 {
-    font-family: "DM Sans", sans-serif;
+.testimonials > .container > h2 {
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -401,7 +401,7 @@
 
 .testimonials > .container > h3 {
     margin-top: .8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 4.8rem;
     line-height: 5.6rem;
@@ -462,7 +462,7 @@
 }
 
 .testimonials > .container .testimonial > .content > div.p {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.8rem;
     line-height: 4.2rem;
@@ -483,8 +483,8 @@
     flex-direction: column;
 }
 
-.testimonials > .container .testimonial > .content > div > div > h5 {
-    font-family: "DM Sans", sans-serif;
+.testimonials > .container .testimonial > .content > div > div > p.author-name {
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -495,7 +495,7 @@
 
 .testimonials > .container .testimonial > .content > div > div > small {
     margin-top: .2rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -555,7 +555,7 @@
 }
 
 .blogs > .container > .info > div > h5 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 3.5rem;
@@ -566,7 +566,7 @@
 
 .blogs > .container > .info > div > h3 {
     margin-top: .8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 4.8rem;
     line-height: 5.6rem;
@@ -583,7 +583,7 @@
     justify-content: center;
     align-items: center;
     gap: .4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -639,7 +639,7 @@
     background: var(--primary-200);
     border: 1px solid var(--primary-200);
     border-radius: 3rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.0rem;
@@ -652,7 +652,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.0rem;
@@ -663,7 +663,7 @@
 
 .blogs > .container > .swiper .blog > .content > h3 {
     margin-top: 1.6rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     line-height: 3.8rem;
@@ -674,7 +674,7 @@
 
 .blogs > .container > .swiper .blog > .content > div.p {
     margin-top: 1.6rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.0rem;
     line-height: 3.0rem;
@@ -687,7 +687,7 @@
     display: flex;
     align-items: center;
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 800;
     font-size: 2.0rem;
     line-height: 3.0rem;
@@ -725,7 +725,7 @@
 }
 
 .newsletter > .container > h3 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 5.6rem;
     line-height: 7.2rem;
@@ -736,7 +736,7 @@
 
 .newsletter > .container > div {
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -763,7 +763,7 @@
     border: none;
     outline: none;
     background: transparent;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;

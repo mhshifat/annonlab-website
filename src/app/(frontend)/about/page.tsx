@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 60; // Revalidate every 60 seconds
 
 import AboutHero from '@/components/modules/about/hero';
 import './about.css';
@@ -9,6 +9,7 @@ import config from '@payload-config';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import HowWeWork from '@/components/modules/about/how-we-work';
 import { Media } from '@/payload-types';
+import Image from 'next/image';
 import Testimonials from '@/components/shared/testimonials';
 import TestimonialPng from '../../../assets/images/testimonial-avatar.png';
 import BlogSlides from '@/components/shared/blogs';
@@ -92,7 +93,7 @@ export default async function AboutPage() {
                     company: item.company || "CEO, Company",
                     content: item?.content ? <RichText data={item.content} /> : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     image: (item.image as Media)?.url || TestimonialPng.src,
-                    logo: (item.logo as Media)?.url ? <img src={(item.logo as Media).url!} /> : "",
+                    logo: (item.logo as Media)?.url ? <Image src={(item.logo as Media).url!} alt="Company logo" width={100} height={40} loading="lazy" /> : "",
                 })) || []}
             />}
 

@@ -12,7 +12,7 @@ export default function Header({ logo, navLinks, ctaText, ctaHref }: HeaderProps
     return (
         <header>
             <div className="container">
-                <Link className="logo" href="">
+                <Link className="logo" href="/" aria-label="Home">
                     {logo}
                 </Link>
                 <nav>

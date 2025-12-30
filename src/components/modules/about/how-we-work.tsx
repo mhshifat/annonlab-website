@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react"
 
 interface HowWeWorkProps {
@@ -26,7 +27,7 @@ export default function HowWeWork({ title, subtitle, steps }: HowWeWorkProps) {
                                 </div>
                                 <div>
                                     {step.description && <div className="p">{step.description}</div>}
-                                    {step.image && <img src={step.image} alt="" />}
+                                    {step.image && <Image src={step.image} alt="" width={600} height={400} loading="lazy" />}
                                 </div>
                             </div>
                         </li>

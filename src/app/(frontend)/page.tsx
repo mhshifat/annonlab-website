@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 60; // Revalidate every 60 seconds
 
 import Culture from '@/components/modules/home/culture';
 import './home.css';
@@ -16,6 +16,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import { Media } from '@/payload-types';
+import Image from 'next/image';
 
 export async function generateMetadata() {
   const payload = await getPayload({ config });
@@ -113,7 +114,7 @@ export default async function Homepage() {
           company: item.company || "CEO, Company",
           content: item?.content ? <RichText data={item.content} /> : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           image: (item.image as Media)?.url || TestimonialPng.src,
-          logo: (item.logo as Media)?.url ? <img src={(item.logo as Media).url!} /> : "",
+          logo: (item.logo as Media)?.url ? <Image src={(item.logo as Media).url!} alt="Company logo" width={100} height={40} loading="lazy" /> : "",
         })) || []}
       />}
 

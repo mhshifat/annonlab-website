@@ -21,18 +21,18 @@ export default function Footer({ email, phone, address, menus, linkedIn, whatsap
                 <div className="content">
                     <div>
                         {email && <div className="email">
-                            <h5>Email</h5>
+                            <p className="label">Email</p>
                             <p>{email}</p>
                         </div>}
                         {phone && (
                             <div className="phone">
-                                <h5>Phone</h5>
+                                <p className="label">Phone</p>
                                 <p>{phone}</p>
                             </div>
                         )}
                         {address && (
                             <div className="address">
-                                <h5>Address</h5>
+                                <p className="label">Address</p>
                                 <p>{address}</p>
                             </div>
                         )}

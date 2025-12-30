@@ -2,7 +2,8 @@ import React from 'react'
 import './styles.css';
 import './reset.css';
 import './root.css';
-import Script from 'next/script';
+import Image from 'next/image';
+import { DM_Sans } from 'next/font/google';
 import Providers from '@/components/providers';
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
@@ -10,10 +11,20 @@ import { getPayload } from 'payload';
 import config from '@payload-config';
 import { Media } from '@/payload-types';
 
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900', '1000'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
+
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
   title: 'Payload Blank Template',
 }
+
+export const revalidate = 300; // Revalidate header/footer every 5 minutes
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
@@ -30,25 +41,20 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   ]);
 
   return (
-    <html lang="en">
+    <html lang="en" className={dmSans.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-        <Script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" strategy='afterInteractive' />
       </head>
       <body>
         <Providers>
           <Header
             logo={header.logo ? (
-              <img width={(header.logo as Media).width || 50} height={(header.logo as Media).height || 50} src={(header.logo as Media).url!} alt="Logo" />
+              <Image
+                width={(header.logo as Media).width || 50}
+                height={(header.logo as Media).height || 50}
+                src={(header.logo as Media).url!}
+                alt="Logo"
+                priority
+              />
             ) : <h3>LOGO</h3>}
             navLinks={[
               { label: "Home", href: "/" },

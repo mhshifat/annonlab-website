@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode, useEffect } from "react";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export interface BlogCardDetails {
     id: string;
@@ -24,9 +27,16 @@ interface BlogSlidesProps {
 export default function BlogSlides({ title, subtitle, ctaText, ctaLink, data }: BlogSlidesProps) {
     useEffect(() => {
         let swiperInstance: any;
-        const timeout = setTimeout(() => {
-            if (typeof window !== "undefined" && window.Swiper && data.length > 3) {
-                new Swiper('.blogs .swiper', {
+        let timeout: NodeJS.Timeout;
+        
+        const initSwiper = async () => {
+            if (typeof window !== "undefined" && data.length > 3) {
+                // Dynamically import Swiper only when needed
+                const { default: Swiper } = await import('swiper');
+                const { Navigation, Autoplay } = await import('swiper/modules');
+                
+                swiperInstance = new Swiper('.blogs .swiper', {
+                    modules: [Navigation, Autoplay],
                     // Optional parameters
                     // loop: true,
                     autoplay: {
@@ -60,7 +70,9 @@ export default function BlogSlides({ title, subtitle, ctaText, ctaLink, data }: 
                     },
                 });
             }
-        }, 0);
+        };
+        
+        timeout = setTimeout(initSwiper, 0);
 
         return () => {
             if (swiperInstance) {
@@ -96,7 +108,7 @@ export default function BlogSlides({ title, subtitle, ctaText, ctaLink, data }: 
                             <div key={item.id} className="swiper-slide">
                                 <div className="blog">
                                     <div className="thumbnail">
-                                        <img src={item.image} alt="" />
+                                        <Image src={item.image} alt="" width={400} height={250} loading="lazy" />
                                     </div>
                                     <div className="content">
                                         <div>

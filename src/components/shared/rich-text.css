@@ -2,7 +2,7 @@
 
 /* Base typography */
 .rich-text-content {
-  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
   font-size: 1.8rem;
   line-height: 1.75;
   color: var(--foreground, #000);

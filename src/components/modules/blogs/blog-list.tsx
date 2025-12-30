@@ -2,6 +2,7 @@
 
 import useFilter from "@/hooks/use-filter";
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 interface BlogListProps {
@@ -37,7 +38,7 @@ export default function BlogList({ categories, data }: BlogListProps) {
                     {data.map((blog) => (
                         <div key={blog.id} className="BlogList__Card">
                             <div className="thumbnail">
-                                <img src={blog.image} alt="" />
+                                <Image src={blog.image} alt="" width={400} height={250} loading="lazy" />
                             </div>
                             <div className="content">
                                 <div>

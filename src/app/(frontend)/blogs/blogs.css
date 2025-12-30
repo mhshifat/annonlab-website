@@ -17,7 +17,7 @@
 }
 
 .hero > .container > h5 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 3.5rem;
@@ -26,7 +26,7 @@
 }
 
 .hero > .container > h3 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 7.2rem;
     line-height: 9.6rem;
@@ -36,7 +36,7 @@
 }
 
 .hero > .container > div {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -62,7 +62,7 @@
 
 .BlogList > .container > .BlogList__Categories > li {
     cursor: pointer;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.0rem;
     line-height: 3.0rem;
@@ -101,7 +101,7 @@
     gap: .4rem;
     border: 1px solid var(--muted);
     padding: 1.4rem 2.8rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -151,7 +151,7 @@
     background: var(--primary-200);
     border: 1px solid var(--primary-200);
     border-radius: 3rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.0rem;
@@ -164,7 +164,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.0rem;
@@ -175,7 +175,7 @@
 
 .BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > h3 {
     margin-top: 1.6rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     line-height: 3.8rem;
@@ -186,7 +186,7 @@
 
 .BlogList > .container > .BlogList__Grid > .BlogList__Card > .content > div {
     margin-top: 1.6rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.0rem;
     line-height: 3.0rem;
@@ -199,7 +199,7 @@
     display: flex;
     align-items: center;
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 800;
     font-size: 2.0rem;
     line-height: 3.0rem;
@@ -237,7 +237,7 @@
 }
 
 .newsletter > .container > h3 {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 5.6rem;
     line-height: 7.2rem;
@@ -248,7 +248,7 @@
 
 .newsletter > .container > div {
     margin-top: 2.4rem;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 2.4rem;
     line-height: 3.6rem;
@@ -275,7 +275,7 @@
     border: none;
     outline: none;
     background: transparent;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 3.6rem;

@@ -16,7 +16,7 @@ export default function Hero(props: HeroProps) {
         <section className="hero">
             <div className="container">
                 <span>{props.subtitle}</span>
-                <h3>{props.title}</h3>
+                <h1>{props.title}</h1>
                 <div>{props.description}</div>
                 <div className="actions">
                     <Link className="cta" href={props.ctaHref}>

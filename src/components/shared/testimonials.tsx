@@ -1,6 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { ReactNode, useEffect } from "react";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export interface TestimonialCardDetails {
     id: string;
@@ -21,9 +24,16 @@ interface TestimonialsProps {
 export default function Testimonials({ data, title, subtitle }: TestimonialsProps) {
     useEffect(() => {
         let swiperInstance: any;
-        const timeout = setTimeout(() => {
-            if (typeof window !== "undefined" && window.Swiper) {
-                swiperInstance = new window.Swiper('.testimonials .swiper', {
+        let timeout: NodeJS.Timeout;
+
+        const initSwiper = async () => {
+            if (typeof window !== "undefined") {
+                // Dynamically import Swiper only when needed
+                const { default: Swiper } = await import('swiper');
+                const { Navigation, Autoplay } = await import('swiper/modules');
+
+                swiperInstance = new Swiper('.testimonials .swiper', {
+                    modules: [Navigation, Autoplay],
                     autoplay: {
                         delay: 2500,
                         disableOnInteraction: false,
@@ -42,7 +52,9 @@ export default function Testimonials({ data, title, subtitle }: TestimonialsProp
                     }
                 });
             }
-        }, 0);
+        };
+
+        timeout = setTimeout(initSwiper, 0);
 
         return () => {
             if (swiperInstance) {
@@ -57,7 +69,7 @@ export default function Testimonials({ data, title, subtitle }: TestimonialsProp
     return (
         <section className="testimonials">
             <div className="container">
-                <h5>{title}</h5>
+                <h2>{title}</h2>
                 <h3>{subtitle}</h3>
 
                 <div className="swiper">
@@ -66,8 +78,8 @@ export default function Testimonials({ data, title, subtitle }: TestimonialsProp
                             <div key={item.id} className="swiper-slide">
                                 <div className="testimonial">
                                     <div className="avatar">
-                                        <img src={item.image} alt="" />
-                                        <button>
+                                        <Image src={item.image} alt="" width={100} height={100} loading="lazy" />
+                                        <button aria-label={`Play testimonial video from ${typeof item.author === 'string' ? item.author : 'testimonial'}`}>
                                             <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M39.9993 4.16699C20.2091 4.16699 4.16602 20.2101 4.16602 40.0003C4.16602 59.7907 20.2091 75.8337 39.9993 75.8337C59.7897 75.8337 75.8327 59.7907 75.8327 40.0003C75.8327 20.2101 59.7897 4.16699 39.9993 4.16699ZM31.666 26.667L54.9993 40.0003L31.666 53.3337V26.667Z" fill="#A3E635" />
                                             </svg>
@@ -78,7 +90,7 @@ export default function Testimonials({ data, title, subtitle }: TestimonialsProp
                                         <div className="p">{item.content}</div>
                                         <div>
                                             <div>
-                                                <h5>{item.author}</h5>
+                                                <p className="author-name">{item.author}</p>
                                                 <small>{item.position}, {item.company}</small>
                                             </div>
                                             {item.logo}

@@ -1,10 +1,9 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 300; // Revalidate every 5 minutes (contact page changes less frequently)
 
 import './contact.css';
 import ContactHero from "@/components/modules/contact/hero";
 import { getPayload } from 'payload';
 import config from '@payload-config';
-import Newsletter from '@/components/shared/newsletter';
 import { RichText } from '@payloadcms/richtext-lexical/react';
 import ContactForm from '@/components/modules/contact/form';
 
