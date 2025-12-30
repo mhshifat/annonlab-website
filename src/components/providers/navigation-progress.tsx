@@ -4,7 +4,7 @@ import * as React from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import NProgress from "nprogress"
 import "nprogress/nprogress.css"
-import { ModernLoader, PageLoader } from "../shared/page-loader"
+import { ModernLoader } from "../shared/page-loader"
 
 // Configure NProgress
 if (typeof window !== "undefined") {
