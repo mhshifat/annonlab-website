@@ -17,6 +17,8 @@ const dmSans = DM_Sans({
   style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-dm-sans',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
 });
 
 export const metadata = {

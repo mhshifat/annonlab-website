@@ -102,6 +102,8 @@ header > div.container > button > svg {
 }
 
 header > div.container > a.logo{
+    display: flex;
+    align-items: center;
     font-family: var(--font-dm-sans), sans-serif;
     font-weight: 900;
     font-size: 3.2rem;
@@ -109,6 +111,15 @@ header > div.container > a.logo{
     letter-spacing: 0%;
     text-decoration: none;
     color: var(--foreground);
+}
+
+header > div.container > a.logo img,
+header > div.container > a.logo span {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 20rem;
+    max-height: 5rem;
 }
 
 header > div.container > nav{
