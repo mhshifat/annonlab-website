@@ -26,7 +26,7 @@ export const metadata = {
   title: 'Payload Blank Template',
 }
 
-export const revalidate = 300; // Revalidate header/footer every 5 minutes
+// Static generation - revalidated on-demand when content changes
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;

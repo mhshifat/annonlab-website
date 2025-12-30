@@ -1,4 +1,4 @@
-export const revalidate = 300; // Revalidate every 5 minutes (contact page changes less frequently)
+// Static generation - revalidated on-demand when content changes
 
 import './contact.css';
 import ContactHero from "@/components/modules/contact/hero";

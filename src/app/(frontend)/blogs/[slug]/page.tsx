@@ -1,4 +1,4 @@
-export const revalidate = 60; // Revalidate every 60 seconds
+// Static generation - revalidated on-demand when content changes
 
 import './blog.css';
 import { getPayload } from 'payload';

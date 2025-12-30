@@ -7,6 +7,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { triggerRevalidation } from './lib/revalidate';
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -22,6 +23,13 @@ export default buildConfig({
     {
       label: "Header",
       slug: "header",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'header' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Logo",
@@ -45,6 +53,13 @@ export default buildConfig({
     {
       label: "Footer",
       slug: "footer",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'footer' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Email",
@@ -101,6 +116,13 @@ export default buildConfig({
     {
       label: "Stats",
       slug: "stats",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'stats' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Years In Business",
@@ -127,6 +149,13 @@ export default buildConfig({
     {
       label: "Homepage",
       slug: "homepage",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'homepage' });
+          }
+        ]
+      },
       fields: [
         {
           label: "General",
@@ -290,6 +319,13 @@ export default buildConfig({
     {
       label: "About Page",
       slug: "about",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'about' });
+          }
+        ]
+      },
       fields: [
         {
           label: "General",
@@ -395,6 +431,13 @@ export default buildConfig({
     {
       label: "Contact Page",
       slug: "contact",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'contact' });
+          }
+        ]
+      },
       fields: [
         {
           label: "General",
@@ -461,6 +504,13 @@ export default buildConfig({
     {
       label: "Blogs Page",
       slug: "blogsPage",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'blogsPage' });
+          }
+        ]
+      },
       fields: [
         {
           label: "General",
@@ -521,6 +571,13 @@ export default buildConfig({
     {
       label: "Testimonials",
       slug: "testimonials",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'testimonials' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Title",
@@ -576,6 +633,13 @@ export default buildConfig({
     {
       label: "Newsletter",
       slug: "newsletter",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'newsletter' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Title",
@@ -592,6 +656,13 @@ export default buildConfig({
     {
       label: "Blogs",
       slug: "blogSlides",
+      hooks: {
+        afterChange: [
+          async () => {
+            await triggerRevalidation({ type: 'blogSlides' });
+          }
+        ]
+      },
       fields: [
         {
           label: "Title",

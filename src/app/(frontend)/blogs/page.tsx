@@ -1,4 +1,4 @@
-export const revalidate = 60; // Revalidate every 60 seconds
+// Static generation - revalidated on-demand when content changes
 
 import BlogsHero from '@/components/modules/blogs/hero';
 import './blogs.css';

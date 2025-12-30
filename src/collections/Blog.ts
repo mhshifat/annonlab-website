@@ -1,6 +1,7 @@
 import { lexicalEditor, LinkFeature } from '@payloadcms/richtext-lexical';
 import type { CollectionConfig } from 'payload';
 import { slugify } from 'transliteration';
+import { triggerRevalidation } from '@/lib/revalidate';
 
 export const Blog: CollectionConfig = {
   slug: 'blogs',
@@ -88,6 +89,23 @@ export const Blog: CollectionConfig = {
           data.slug = slugify(data.titleForSlug, { lowercase: true });
         }
         return data;
+      }
+    ],
+    afterChange: [
+      async ({ doc, operation }) => {
+        // Trigger revalidation when blog is created or updated
+        await triggerRevalidation({
+          type: 'blog',
+          slug: doc.slug,
+        });
+      }
+    ],
+    afterDelete: [
+      async ({ doc }) => {
+        // Trigger revalidation when blog is deleted
+        await triggerRevalidation({
+          type: 'blog',
+        });
       }
     ]
   }
