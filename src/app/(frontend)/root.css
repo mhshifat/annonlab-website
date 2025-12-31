@@ -118,8 +118,6 @@ header > div.container > a.logo span {
     display: block;
     width: auto;
     height: auto;
-    max-width: 20rem;
-    max-height: 5rem;
 }
 
 header > div.container > nav{

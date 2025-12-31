@@ -490,6 +490,8 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface Header {
   id: string;
   logo: string | Media;
+  width: number;
+  height: number;
   ctaText?: string | null;
   ctaLink?: string | null;
   updatedAt?: string | null;
@@ -1119,6 +1121,8 @@ export interface BlogSlide {
  */
 export interface HeaderSelect<T extends boolean = true> {
   logo?: T;
+  width?: T;
+  height?: T;
   ctaText?: T;
   ctaLink?: T;
   updatedAt?: T;

@@ -51,8 +51,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           <Header
             logo={header.logo ? (
               <Image
-                width={(header.logo as Media).width || 50}
-                height={(header.logo as Media).height || 50}
+                width={header?.width || (header.logo as Media).width || 50}
+                height={header?.height || (header.logo as Media).height || 50}
                 src={(header.logo as Media).url!}
                 alt="Logo"
                 priority

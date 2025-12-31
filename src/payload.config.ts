@@ -39,6 +39,18 @@ export default buildConfig({
           required: true,
         },
         {
+          label: "Width",
+          name: "width",
+          type: "number",
+          required: true,
+        },
+        {
+          label: "Height",
+          name: "height",
+          type: "number",
+          required: true,
+        },
+        {
           label: "CTA Text",
           name: "ctaText",
           type: "text",
